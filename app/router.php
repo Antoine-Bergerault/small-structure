@@ -24,6 +24,9 @@ class router{
 
     static function view($url, $method, $params){
 
+        include APP . '/db.php';
+        $db = new db();
+
         if(file_exists(VIEWS . "/$method/" . $url . '.php')){
 
             $title = str_replace('/', ' - ', $url);
